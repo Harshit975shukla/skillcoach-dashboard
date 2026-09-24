@@ -478,5 +478,17 @@
       "9/13 bullets are quantified. Good.",
       "Strong action verbs used: architected, automated, built, designed, owned, reduced."
     ]
-  }
+  },
+  "curriculum": {
+    "week_plan": {
+      "2026-09-21": "AWS EC2: Instance Types & Auto Scaling",
+      "2026-09-22": "AWS VPC: Networking & Security Groups",
+      "2026-09-23": "AWS IAM: Roles, Policies & Best Practices",
+      "2026-09-24": "AWS S3: Storage Classes & Lifecycle",
+      "2026-09-25": "AWS RDS: Multi-AZ & Read Replicas",
+      "2026-09-26": "AWS Review: Practice Questions"
+    },
+    "week_number": 1
+  },
+  "next_week_preference": ""
 }
