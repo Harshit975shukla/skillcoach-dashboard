@@ -71,6 +71,7 @@ main { padding: clamp(1rem, 4vw, 2.5rem); max-width: 1180px; margin: 0 auto; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: .9rem 1rem;
   display: flex; flex-direction: column; gap: .1rem;
+  animation: card-in 0.45s ease both;
 }
 .card b { font-size: 1.9rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1.1; }
 .card small { color: var(--muted); font-size: .78rem; }
@@ -80,6 +81,37 @@ main { padding: clamp(1rem, 4vw, 2.5rem); max-width: 1180px; margin: 0 auto; }
 .accent-purple b { color: var(--purple); }
 .accent-pink b   { color: var(--pink); }
 .accent-teal b   { color: var(--teal); }
+
+/* lottie card icon */
+.lottie-card { position: relative; }
+.lottie-card-icon {
+  position: absolute;
+  right: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  opacity: .55;
+  pointer-events: none;
+}
+
+/* lottie loading animation */
+.lottie-loading-anim {
+  width: 120px;
+  height: 40px;
+  margin: 0 auto 1.2rem;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cards .card:nth-child(1) { animation-delay: .04s; }
+.cards .card:nth-child(2) { animation-delay: .08s; }
+.cards .card:nth-child(3) { animation-delay: .12s; }
+.cards .card:nth-child(4) { animation-delay: .16s; }
+.cards .card:nth-child(5) { animation-delay: .20s; }
+.cards .card:nth-child(6) { animation-delay: .24s; }
 
 .panel {
   background: var(--surface); border: 1px solid var(--border);
@@ -111,7 +143,11 @@ main { padding: clamp(1rem, 4vw, 2.5rem); max-width: 1180px; margin: 0 auto; }
 .bar-row { display: grid; grid-template-columns: 110px 1fr 56px; gap: .6rem; align-items: center; font-size: .85rem; }
 .bar-name { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar-track { background: var(--surface-2); border-radius: 999px; height: 8px; overflow: hidden; }
-.bar-fill { background: linear-gradient(90deg, var(--blue), var(--teal)); height: 100%; border-radius: 999px; }
+.bar-fill {
+  background: linear-gradient(90deg, var(--blue), var(--teal));
+  height: 100%; border-radius: 999px;
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .bar-val { text-align: right; color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
 
 .list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; max-height: 420px; overflow-y: auto; }
@@ -140,4 +176,5 @@ main { padding: clamp(1rem, 4vw, 2.5rem); max-width: 1180px; margin: 0 auto; }
 @media (max-width: 480px) {
   .bar-row { grid-template-columns: 84px 1fr 46px; }
   .card b { font-size: 1.55rem; }
+  .lottie-card-icon { width: 38px; height: 38px; }
 }
