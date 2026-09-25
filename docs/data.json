@@ -490,10 +490,11 @@
     },
     "week_number": 1,
     "daily_lessons": {
-      "2026-09-24": "AWS S3: Storage Classes & Lifecycle"
+      "2026-09-24": "AWS S3: Storage Classes & Lifecycle",
+      "2026-09-25": "AWS RDS: Multi-AZ & Read Replicas"
     },
-    "last_topic": "AWS S3: Storage Classes & Lifecycle"
+    "last_topic": "AWS RDS: Multi-AZ & Read Replicas"
   },
   "next_week_preference": "",
-  "last_updated": "2026-09-24T15:24:21.849977+05:30"
+  "last_updated": "2026-09-25T09:14:34.803814+05:30"
 }
