@@ -1,39 +1,24 @@
 {
-  "generated_at": "2026-09-23T10:05:59+00:00",
+  "schema_version": 1,
   "profile": {
-    "name": "Harshit",
-    "target_role": "Cloud DevOps and AI Engineer",
-    "level": "advanced",
-    "skills": [],
+    "name": "Learner",
+    "target_role": "Technical interview practice",
+    "level": "Private",
+    "reminder": "09:00 weekdays",
     "timezone": "Asia/Kolkata",
-    "reminder": "09:00",
-    "tasks_per_day": 3,
     "paused": false
   },
   "stats": {
-    "total": 21,
     "done": 0,
-    "pending": 21,
-    "skipped": 0,
     "streak": 0,
-    "completion_rate": 0,
+    "pending": 0,
     "minutes_practiced": 0,
     "answers_graded": 0,
-    "avg_answer_score": null
+    "avg_answer_score": null,
+    "completion_rate": 0,
+    "total": 0
   },
   "activity": [
-    {
-      "date": "2026-08-25",
-      "done": 0,
-      "pending": 0,
-      "skipped": 0
-    },
-    {
-      "date": "2026-08-26",
-      "done": 0,
-      "pending": 0,
-      "skipped": 0
-    },
     {
       "date": "2026-08-27",
       "done": 0,
@@ -199,302 +184,26 @@
     {
       "date": "2026-09-23",
       "done": 0,
-      "pending": 3,
+      "pending": 0,
+      "skipped": 0
+    },
+    {
+      "date": "2026-09-24",
+      "done": 0,
+      "pending": 0,
+      "skipped": 0
+    },
+    {
+      "date": "2026-09-25",
+      "done": 0,
+      "pending": 0,
       "skipped": 0
     }
   ],
-  "skills": [
-    {
-      "skill": "aws",
-      "total": 4,
-      "done": 0
-    },
-    {
-      "skill": "observability",
-      "total": 3,
-      "done": 0
-    },
-    {
-      "skill": "senior-behavioral",
-      "total": 3,
-      "done": 0
-    },
-    {
-      "skill": "genai",
-      "total": 3,
-      "done": 0
-    },
-    {
-      "skill": "cicd",
-      "total": 2,
-      "done": 0
-    },
-    {
-      "skill": "terraform",
-      "total": 2,
-      "done": 0
-    },
-    {
-      "skill": "cloud-design",
-      "total": 2,
-      "done": 0
-    },
-    {
-      "skill": "kubernetes",
-      "total": 1,
-      "done": 0
-    },
-    {
-      "skill": "python",
-      "total": 1,
-      "done": 0
-    }
-  ],
-  "open_tasks": [
-    {
-      "id": 1,
-      "title": "Debug a CrashLoopBackOff end-to-end",
-      "detail": "Deliberately break a Deployment (bad probe, OOM limit, missing secret). For each, narrate the exact kubectl sequence you'd run and what output confirms the cause. Interviewers ask this constantly.",
-      "skill": "kubernetes",
-      "difficulty": "medium",
-      "est_minutes": 45,
-      "assigned_on": "2026-09-23",
-      "overdue_days": 0
-    },
-    {
-      "id": 2,
-      "title": "Reduce MTTD with a concrete plan",
-      "detail": "You cut MTTD from 45 to under 10 minutes. Reconstruct exactly how, as a repeatable method: what you instrumented, what you alerted on, what you deleted.",
-      "skill": "observability",
-      "difficulty": "medium",
-      "est_minutes": 40,
-      "assigned_on": "2026-09-23",
-      "overdue_days": 0
-    },
-    {
-      "id": 3,
-      "title": "Handle the scope question",
-      "detail": "Senior roles probe blast radius: how many engineers were affected, what did you own end-to-end, what decision was yours alone. Write your honest answers.",
-      "skill": "senior-behavioral",
-      "difficulty": "medium",
-      "est_minutes": 40,
-      "assigned_on": "2026-09-23",
-      "overdue_days": 0
-    },
-    {
-      "id": 4,
-      "title": "Supply chain security",
-      "detail": "SBOM generation, image signing (cosign), admission control on unsigned images, dependency pinning, and locking down the build runner itself.",
-      "skill": "cicd",
-      "difficulty": "hard",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-24",
-      "overdue_days": 0
-    },
-    {
-      "id": 5,
-      "title": "LLMOps: deploy, monitor, iterate",
-      "detail": "Versioning prompts, shadow testing, drift detection, feedback capture, and rollback. How is this different from deploying normal code?",
-      "skill": "genai",
-      "difficulty": "hard",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-24",
-      "overdue_days": 0
-    },
-    {
-      "id": 6,
-      "title": "Answer 'why are you leaving Accenture?'",
-      "detail": "Forward-looking, specific, zero criticism of current employer. Write it, say it out loud, cut it to 30 seconds.",
-      "skill": "senior-behavioral",
-      "difficulty": "medium",
-      "est_minutes": 30,
-      "assigned_on": "2026-09-24",
-      "overdue_days": 0
-    },
-    {
-      "id": 7,
-      "title": "Secrets and Terraform",
-      "detail": "Explain why secrets end up in state in plaintext, and the mitigations: encrypted backends, ephemeral resources, external secret managers, write-only arguments.",
-      "skill": "terraform",
-      "difficulty": "medium",
-      "est_minutes": 40,
-      "assigned_on": "2026-09-25",
-      "overdue_days": 0
-    },
-    {
-      "id": 8,
-      "title": "IAM policy evaluation logic",
-      "detail": "Explicit deny > SCP > permission boundary > identity policy > resource policy. Work through a scenario where access is denied and you must name exactly which layer blocked it.",
-      "skill": "aws",
-      "difficulty": "hard",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-25",
-      "overdue_days": 0
-    },
-    {
-      "id": 9,
-      "title": "Write a blameless postmortem",
-      "detail": "Use a real incident. Timeline, impact, detection gap, contributing factors, and action items with owners. No individual named as the cause.",
-      "skill": "observability",
-      "difficulty": "medium",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-25",
-      "overdue_days": 0
-    },
-    {
-      "id": 10,
-      "title": "Capacity and cost estimate",
-      "detail": "For a service at 5k RPS: instance sizing, autoscaling headroom, data transfer, storage growth. Produce a monthly figure and defend the assumptions.",
-      "skill": "cloud-design",
-      "difficulty": "medium",
-      "est_minutes": 45,
-      "assigned_on": "2026-09-26",
-      "overdue_days": 0
-    },
-    {
-      "id": 11,
-      "title": "When NOT to use an LLM",
-      "detail": "Write 6 scenarios where a script, a query, or a rules engine beats an LLM. Being able to say this is a senior signal.",
-      "skill": "genai",
-      "difficulty": "medium",
-      "est_minutes": 35,
-      "assigned_on": "2026-09-26",
-      "overdue_days": 0
-    },
-    {
-      "id": 12,
-      "title": "SSM Session Manager vs bastion hosts",
-      "detail": "You built an SSM-only access path. Write the security argument: no inbound ports, IAM-gated, fully audited. Name the trade-offs a sceptical reviewer would raise.",
-      "skill": "aws",
-      "difficulty": "medium",
-      "est_minutes": 35,
-      "assigned_on": "2026-09-26",
-      "overdue_days": 0
-    },
-    {
-      "id": 13,
-      "title": "Build your 5 core STAR stories",
-      "detail": "Conflict, failure, influence without authority, technical leadership, ambiguity. Use Infra Agent, the GitLab pipeline work, the DR rebuild, cost governance, and mentoring. 2 minutes each, with numbers.",
-      "skill": "senior-behavioral",
-      "difficulty": "medium",
-      "est_minutes": 60,
-      "assigned_on": "2026-09-27",
-      "overdue_days": 0
-    },
-    {
-      "id": 14,
-      "title": "GitOps with Argo CD",
-      "detail": "Explain pull vs push deployment, drift reconciliation, app-of-apps, sync waves, and how you handle secrets and emergency manual changes.",
-      "skill": "cicd",
-      "difficulty": "hard",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-27",
-      "overdue_days": 0
-    },
-    {
-      "id": 15,
-      "title": "Multi-account landing zone",
-      "detail": "Sketch an Organizations layout: OUs, SCP guardrails, centralised logging, network account, break-glass access. Justify each boundary.",
-      "skill": "aws",
-      "difficulty": "hard",
-      "est_minutes": 60,
-      "assigned_on": "2026-09-27",
-      "overdue_days": 0
-    },
-    {
-      "id": 16,
-      "title": "Pytest: fixtures, parametrize, monkeypatch",
-      "detail": "Write tests for an existing function using all three. Aim for real edge cases, not happy paths.",
-      "skill": "python",
-      "difficulty": "medium",
-      "est_minutes": 50,
-      "assigned_on": "2026-09-28",
-      "overdue_days": 0
-    },
-    {
-      "id": 17,
-      "title": "Terraform in CI/CD safely",
-      "detail": "Design the pipeline: plan on PR with output posted as a comment, gated apply on merge, OIDC auth instead of static keys, state locking, and policy-as-code (OPA/Sentinel) gates.",
-      "skill": "terraform",
-      "difficulty": "hard",
-      "est_minutes": 55,
-      "assigned_on": "2026-09-28",
-      "overdue_days": 0
-    },
-    {
-      "id": 18,
-      "title": "Metrics vs logs vs traces",
-      "detail": "When does each answer a question the others can't? Explain cardinality explosion and why it destroys a metrics backend.",
-      "skill": "observability",
-      "difficulty": "medium",
-      "est_minutes": 40,
-      "assigned_on": "2026-09-28",
-      "overdue_days": 0
-    },
-    {
-      "id": 19,
-      "title": "MCP and tool interoperability",
-      "detail": "Explain the Model Context Protocol: what problem it solves, the client/server split, and how you'd expose your existing Python tools through it.",
-      "skill": "genai",
-      "difficulty": "medium",
-      "est_minutes": 45,
-      "assigned_on": "2026-09-29",
-      "overdue_days": 0
-    },
-    {
-      "id": 20,
-      "title": "Design a CI/CD platform for 200 engineers",
-      "detail": "Self-service onboarding, golden paths, guardrails, runner capacity, cost attribution, and multi-tenancy isolation.",
-      "skill": "cloud-design",
-      "difficulty": "hard",
-      "est_minutes": 60,
-      "assigned_on": "2026-09-29",
-      "overdue_days": 0
-    },
-    {
-      "id": 21,
-      "title": "VPC design from scratch",
-      "detail": "Design a 3-AZ VPC: CIDR sizing, public/private/isolated subnets, NAT strategy and cost, route tables, VPC endpoints (gateway vs interface), and the security group vs NACL distinction.",
-      "skill": "aws",
-      "difficulty": "hard",
-      "est_minutes": 55,
-      "assigned_on": "2026-09-29",
-      "overdue_days": 0
-    }
-  ],
+  "skills": [],
+  "open_tasks": [],
   "recent_done": [],
   "recent_answers": [],
-  "resume": {
-    "score": 85,
-    "word_count": 1034,
-    "bullets": 13,
-    "quantified": 9,
-    "issues": [
-      "Too long (1034 words, roughly 2+ pages). Trim to one page unless you have 10+ years of experience.",
-      "No GitHub/portfolio link. For engineering roles this is expected.",
-      "1 bullet(s) exceed ~32 words. Keep each to 1-2 lines."
-    ],
-    "wins": [
-      "9/13 bullets are quantified. Good.",
-      "Strong action verbs used: architected, automated, built, designed, owned, reduced."
-    ]
-  },
-  "curriculum": {
-    "week_plan": {
-      "2026-09-21": "AWS EC2: Instance Types & Auto Scaling",
-      "2026-09-22": "AWS VPC: Networking & Security Groups",
-      "2026-09-23": "AWS IAM: Roles, Policies & Best Practices",
-      "2026-09-24": "AWS S3: Storage Classes, Lifecycle & Security",
-      "2026-09-25": "AWS RDS: Multi-AZ & Read Replicas",
-      "2026-09-26": "AWS Review: Practice Questions"
-    },
-    "week_number": 1,
-    "daily_lessons": {
-      "2026-09-24": "AWS S3: Storage Classes & Lifecycle",
-      "2026-09-25": "AWS RDS: Multi-AZ & Read Replicas"
-    },
-    "last_topic": "AWS RDS: Multi-AZ & Read Replicas"
-  },
-  "next_week_preference": "",
-  "last_updated": "2026-09-25T14:30:45.916062+05:30"
+  "resume": null,
+  "generated_at": "2026-09-25T16:11:33.775738+00:00"
 }
