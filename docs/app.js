@@ -5,6 +5,8 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+  const _lotties = {};
+
   function dataFile() {
     const u = new URLSearchParams(location.search).get("u");
     return u && /^-?\d+$/.test(u) ? `data-${u}.json` : "data.json";
@@ -25,6 +27,36 @@
     return `lv${Math.min(n, 4)}`;
   }
 
+  function initLottie(id, src) {
+    if (!window.lottie) return;
+    const el = $(id);
+    if (!el) return;
+    if (_lotties[id]) { _lotties[id].destroy(); delete _lotties[id]; }
+    el.innerHTML = "";
+    _lotties[id] = lottie.loadAnimation({
+      container: el, renderer: "svg",
+      loop: true, autoplay: true, path: src,
+    });
+  }
+
+  function stopLottie(id) {
+    if (_lotties[id]) { _lotties[id].destroy(); delete _lotties[id]; }
+    const el = $(id);
+    if (el) el.innerHTML = "";
+  }
+
+  function countUp(el, target) {
+    if (!el || !target) return;
+    const dur = 700, start = Date.now(), from = 0;
+    const step = () => {
+      const p = Math.min(1, (Date.now() - start) / dur);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(from + ease * (target - from));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
   function renderProfile(p) {
     $("p-name").textContent = p.name || "—";
     $("p-role").textContent = p.target_role || "not set";
@@ -34,15 +66,33 @@
   }
 
   function renderStats(s, open) {
-    $("m-done").textContent = s.done ?? 0;
+    const done = s.done ?? 0;
+    const streak = s.streak ?? 0;
+    const pending = s.pending ?? 0;
+    const minutes = s.minutes_practiced ?? 0;
+    const answers = s.answers_graded ?? 0;
+
+    countUp($("m-done"), done);
+    countUp($("m-streak"), streak);
+    countUp($("m-pending"), pending);
+    countUp($("m-minutes"), minutes);
+    countUp($("m-answers"), answers);
+
     $("m-rate").textContent = `${s.completion_rate ?? 0}% of ${s.total ?? 0} assigned`;
-    $("m-streak").textContent = s.streak ?? 0;
-    $("m-pending").textContent = s.pending ?? 0;
     const overdue = open.filter((t) => t.overdue_days > 0).length;
     $("m-overdue").textContent = overdue ? `${overdue} overdue` : "none overdue";
-    $("m-minutes").textContent = s.minutes_practiced ?? 0;
-    $("m-answers").textContent = s.answers_graded ?? 0;
     $("m-avg").textContent = s.avg_answer_score != null ? `avg ${s.avg_answer_score}/10` : "no score yet";
+
+    if (streak > 0) {
+      initLottie("anim-streak", "lottie/fire.json");
+    } else {
+      stopLottie("anim-streak");
+    }
+    if (done > 0) {
+      initLottie("anim-done", "lottie/check.json");
+    } else {
+      stopLottie("anim-done");
+    }
   }
 
   function renderHeatmap(activity) {
@@ -61,9 +111,14 @@
     $("skills").innerHTML = skills.map((s) => `
       <div class="bar-row">
         <span class="bar-name" title="${esc(s.skill)}">${esc(s.skill)}</span>
-        <span class="bar-track"><span class="bar-fill" style="width:${(s.done / max) * 100}%"></span></span>
+        <span class="bar-track"><span class="bar-fill" style="width:0%" data-w="${(s.done / max) * 100}"></span></span>
         <span class="bar-val">${s.done}/${s.total}</span>
       </div>`).join("");
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.querySelectorAll(".bar-fill[data-w]").forEach((el) => {
+        el.style.width = el.dataset.w + "%";
+      });
+    }));
   }
 
   function renderOpen(tasks) {
@@ -135,6 +190,7 @@
     $("updated").textContent = `Updated ${relTime(d.generated_at)}`;
     $("empty").hidden = true;
     $("app").hidden = false;
+    stopLottie("anim-loading");
   }
 
   async function load() {
@@ -150,6 +206,7 @@
       $("empty-msg").innerHTML =
         `Could not load <code>${esc(file)}</code> (${esc(err.message)}).<br>` +
         `Open Telegram and send <code>/publish</code> to your SkillCoach bot.`;
+      initLottie("anim-loading", "lottie/loading.json");
     }
   }
 
